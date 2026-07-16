@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | De La Salle John Bosco College</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    /* ----- RESET & BASE ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: #1e1e1e;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ----- SECTION TITLE ----- */
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .section-title span {
+      display: inline-block;
+      background: #006633;
+      color: #fff;
+      padding: 6px 20px;
+      border-radius: 50px;
+      font-size: 14px;
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
+    .section-title h2 {
+      font-size: 40px;
+      color: #004225;
+      margin-top: 15px;
+      font-weight: 700;
+    }
+
+    /* ----- BUTTONS ----- */
+    .btn-primary {
+      display: inline-block;
+      background: #006633;
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.35s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: #FFD54F;
+      color: #004225;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    /* ----- NAVIGATION ----- */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 50px;
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      flex-wrap: wrap;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo img {
+      height: 55px; /* Slightly adjusted to cleanly display the official seal */
+      width: auto;
+      object-fit: contain;
+    }
+    .logo-text h2 {
+      font-size: 20px;
+      color: #004225;
+      line-height: 1.2;
+    }
+    .logo-text span {
+      font-size: 14px;
+      color: #006633;
+      font-weight: 500;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      font-weight: 500;
+    }
+    .nav-links a {
+      color: #1e1e1e;
+      transition: 0.2s;
+    }
+    .nav-links a.active {
+      color: #006633;
+      font-weight: 600;
+    }
+    .nav-links a:hover {
+      color: #006633;
+    }
+    .btn-admission {
+      background: #006633;
+      color: #fff;
+      padding: 10px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .btn-admission:hover {
+      background: #004225;
+      transform: scale(1.02);
+    }
+
+    /* ============================================================
+        PAGE HERO - BLENDED BACKGROUND WITH YOUR IMAGE
+       ============================================================ */
+    .page-hero {
+      position: relative;
+      height: 60vh;
+      min-height: 380px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* FIXED: Set opacity to 1.0 to keep the background banner image perfectly clear */
+    .page-hero .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 1.0; 
+      z-index: 1;
+    }
+
+    /* FIXED: Thinned out overlay using lighter alpha values (0.45 and 0.35) */
+    .page-hero .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 40, 20, 0.45), rgba(0, 70, 40, 0.35));
+      z-index: 2;
+    }
+
+    /* ----- HERO CONTENT ----- */
+    .page-hero .hero-content {
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      color: #fff;
+      padding: 0 20px;
+    }
+    .page-hero h1 {
+      font-size: 58px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.5); /* Enhanced text shadow for readability */
+    }
+    .page-hero p {
+      font-size: 24px;
+      color: #FFD54F;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+
+    /* ============================================================
+        ABOUT SECTION - WITH YOUR IMAGE IN THE RECTANGULAR SLOT
+       ============================================================ */
+    .about {
+      padding: 90px 0;
+      background: #fff;
+    }
+    .about .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .about-image {
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+    }
+    .about-image img {
+      width: 100%;
+      height: 400px;
+      display: block;
+      transition: 0.5s;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+    .about-image:hover img {
+      transform: scale(1.06);
+    }
+    .about-content h2 {
+      font-size: 40px;
+      color: #004225;
+      margin: 20px 0;
+    }
+    .about-content p {
+      color: #555;
+      font-size: 17px;
+      text-align: justify;
+      margin-bottom: 30px;
+    }
+    .section-tag {
+      display: inline-block;
+      background: #006633;
+      color: #fff;
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    /* ============================================================
+        HISTORY - CENTERED TEXT (NO IMAGE)
+       ============================================================ */
+    .history {
+      padding: 90px 0;
+      background: #f7f9f8;
+    }
+    .history .container {
+      display: block;
+      max-width: 850px;
+      text-align: center;
+    }
+    .history-content h2 {
+      font-size: 40px;
+      color: #004225;
+      margin: 20px 0;
+    }
+    .history-content p {
+      color: #555;
+      text-align: center;
+      line-height: 1.9;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .history-image {
+      display: none;
+    }
+
+    /* ----- VMV ----- */
+    .vmv {
+      padding: 90px 0;
+      background: #f8faf9;
+    }
+    .vmv-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-top: 40px;
+    }
+    .vmv-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 45px 35px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+      transition: 0.4s;
+    }
+    .vmv-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+    }
+    .vmv-icon {
+      width: 80px;
+      height: 80px;
+      background: #006633;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 32px;
+    }
+    .vmv-card h3 {
+      color: #004225;
+      margin-bottom: 15px;
+      font-size: 26px;
+    }
+    .vmv-card p {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    /* ----- CORE VALUES ----- */
+    .values {
+      padding: 90px 0;
+      background: #fff;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+      margin-top: 40px;
+    }
+    .value-card {
+      background: #ffffff;
+      padding: 40px 25px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      transition: 0.4s;
+    }
+    .value-card:hover {
+      transform: translateY(-10px);
+    }
+    .value-card i {
+      width: 80px;
+      height: 80px;
+      line-height: 80px;
+      background: #006633;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    .value-card h3 {
+      color: #004225;
+      margin-bottom: 12px;
+      font-size: 24px;
+    }
+    .value-card p {
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* ----- WHY CHOOSE ----- */
+    .why-dlsjbc {
+      padding: 90px 0;
+      background: #f5f7f6;
+    }
+    .choose-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .choose-card {
+      background: #fff;
+      padding: 35px 25px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      transition: 0.4s;
+    }
+    .choose-card:hover {
+      transform: translateY(-8px);
+    }
+    .choose-card i {
+      font-size: 40px;
+      color: #006633;
+      margin-bottom: 18px;
+    }
+    .choose-card h3 {
+      color: #004225;
+      margin-bottom: 12px;
+    }
+    .choose-card p {
+      color: #666;
+    }
+
+    /* ============================================================
+        SCHOOL SEAL - WITH YOUR OWN LOGO
+       ============================================================ */
+    .school-seal {
+      padding: 90px 0;
+      background: #fff;
+    }
+    .school-seal .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .seal-image {
+      text-align: center;
+    }
+    .seal-image img {
+      width: 300px;
+      max-width: 100%;
+      transition: 0.4s;
+      border-radius: 20px;
+    }
+    .seal-image img:hover {
+      transform: rotate(4deg) scale(1.04);
+    }
+    .seal-content h2 {
+      color: #004225;
+      font-size: 38px;
+      margin: 20px 0;
+    }
+    .seal-content p {
+      color: #555;
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    /* ============================================================
+        SCHOOL ALMA MATER - WITH AUDIO PLAYER
+       ============================================================ */
+    .school-hymn {
+      padding: 90px 0;
+      background: #f8faf9;
+    }
+    .hymn-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 20px;
+      padding: 50px 40px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    }
+    .hymn-card i {
+      font-size: 48px;
+      color: #006633;
+      margin-bottom: 20px;
+    }
+    .hymn-card h3 {
+      color: #004225;
+      margin-bottom: 18px;
+      font-size: 28px;
+    }
+    .hymn-card p {
+      color: #666;
+      margin-bottom: 28px;
+      line-height: 1.8;
+    }
+    /* Audio player styling */
+    .hymn-card audio {
+      width: 100%;
+      max-width: 400px;
+      margin: 15px auto;
+      display: block;
+      border-radius: 30px;
+    }
+    .hymn-card audio::-webkit-media-controls-panel {
+      background-color: #f0f5f2;
+    }
+    .hymn-card audio::-webkit-media-controls-play-button {
+      background-color: #006633;
+      border-radius: 50%;
+    }
+    /* Button styles */
+    .btn-play {
+      display: inline-block;
+      background: #006633;
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.35s;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .btn-play:hover {
+      background: #FFD54F;
+      color: #004225;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .btn-play i {
+      font-size: 18px;
+      margin-right: 10px;
+      color: inherit;
+    }
+
+    /* ----- LEADERSHIP ----- */
+    .leadership {
+      padding: 90px 0;
+      background: #fff;
+    }
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+      margin-top: 40px;
+    }
+    .leader-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+      transition: 0.35s;
+    }
+    .leader-card:hover {
+      transform: translateY(-10px);
+    }
+    .leader-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      background: #d9e2dc;
+    }
+    .leader-card h3 {
+      color: #004225;
+      margin: 22px 0 10px;
+    }
+    .leader-card p {
+      color: #666;
+      padding: 0 25px 30px;
+    }
+
+    /* ----- PRAYER ----- */
+    .prayer {
+      background: linear-gradient(135deg, #006633, #004225);
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .prayer i {
+      font-size: 50px;
+      color: #FFD54F;
+      margin-bottom: 18px;
+    }
+    .prayer h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+    .prayer p {
+      font-size: 20px;
+      opacity: 0.9;
+    }
+
+    /* ----- ACHIEVEMENTS ----- */
+    .achievements {
+      padding: 90px 0;
+      background: #fff;
+    }
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .achievement-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+      transition: 0.35s;
+    }
+    .achievement-card:hover {
+      transform: translateY(-10px);
+    }
+    .achievement-card i {
+      font-size: 44px;
+      color: #006633;
+      margin-bottom: 18px;
+    }
+    .achievement-card h3 {
+      color: #004225;
+      margin-bottom: 12px;
+    }
+    .achievement-card p {
+      color: #666;
+    }
+
+    /* ----- TESTIMONIALS ----- */
+    .testimonials {
+      padding: 90px 0;
+      background: #f8faf9;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .testimonial-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 35px 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      transition: 0.35s;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-10px);
+    }
+    .testimonial-card i {
+      font-size: 34px;
+      color: #FFD54F;
+      margin-bottom: 16px;
+    }
+    .testimonial-card h4 {
+      color: #004225;
+      margin-top: 20px;
+    }
+    .testimonial-card span {
+      color: #888;
+      font-size: 14px;
+    }
+
+    /* ----- ABOUT CTA ----- */
+    .about-cta {
+      background: linear-gradient(rgba(0,90,45,0.94), rgba(0,60,30,0.94));
+      color: #fff;
+      text-align: center;
+      padding: 90px 20px;
+    }
+    .about-cta h2 {
+      font-size: 42px;
+      margin-bottom: 18px;
+    }
+    .about-cta p {
+      max-width: 700px;
+      margin: 0 auto 35px;
+      font-size: 18px;
+    }
+
+    /* ----- FOOTER ----- */
+    footer {
+      background: #002b17;
+      color: #ddd;
+      padding: 50px 20px 20px;
+    }
+    .footer-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-logo img {
+      height: 55px;
+      margin-bottom: 12px;
+    }
+    .footer-logo h3 {
+      color: #fff;
+      font-size: 22px;
+      line-height: 1.3;
+    }
+    .footer-logo p {
+      margin-top: 8px;
+      color: #FFD54F;
+    }
+    .footer-links h4, .footer-social h4 {
+      color: #fff;
+      margin-bottom: 18px;
+    }
+    .footer-links a {
+      display: block;
+      margin-bottom: 10px;
+      color: #bbb;
+      transition: 0.2s;
+    }
+    .footer-links a:hover {
+      color: #FFD54F;
+    }
+    .footer-social a {
+      display: inline-block;
+      margin-right: 18px;
+      font-size: 24px;
+      color: #bbb;
+      transition: 0.2s;
+    }
+    .footer-social a:hover {
+      color: #FFD54F;
+    }
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    /* ----- RESPONSIVE ----- */
+    @media (max-width: 992px) {
+      nav { padding: 18px 30px; }
+      .nav-links { gap: 16px; flex-wrap: wrap; }
+      .about .container, .school-seal .container {
+        grid-template-columns: 1fr;
+      }
+      .about-content, .history-content, .seal-content { text-align: center; }
+      .about-content p, .history-content p { text-align: center; }
+      .vmv-grid, .values-grid, .choose-grid,
+      .leadership-grid, .achievements-grid, .testimonial-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+      .page-hero h1 { font-size: 44px; }
+      .about-image img {
+        height: 300px;
+      }
+      .seal-image img {
+        width: 200px;
+      }
+    }
+    @media (max-width: 768px) {
+      .page-hero { height: 45vh; min-height: 300px; }
+      .page-hero h1 { font-size: 32px; }
+      .page-hero p { font-size: 18px; }
+      .section-title h2 { font-size: 30px; }
+      .vmv-grid, .values-grid, .choose-grid,
+      .leadership-grid, .achievements-grid, .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .about .container {
+        gap: 40px;
+      }
+      .btn-primary { padding: 12px 28px; }
+      .nav-links { display: none; }
+      .btn-admission { padding: 8px 18px; font-size: 14px; }
+      .about-image img {
+        height: 250px;
+      }
+      .seal-image img {
+        width: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="logo">
+    <!-- FIXED: SVG placeholder cleanly replaced with the official transparent DLSJBC crest logo -->
+    <img src="images/school-logo.jpg" alt="DLSJBC Logo">
+    <div class="logo-text">
+      <h2>De La Salle</h2>
+      <span>John Bosco College</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a class="active" href="about.html">About</a></li>
+    <li><a href="academics.html">Academics</a></li>
+    <li><a href="admissions.html">Admissions</a></li>
+    <li><a href="campus-life.html">Campus Life</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="#" class="btn-admission">Apply Now</a>
+</nav>
+
+<!-- ============================================================
+     PAGE HERO - WITH YOUR BACKGROUND IMAGE (LOW OPACITY)
+     ============================================================ -->
+<section class="page-hero">
+  <img 
+    src="images/about-banner.jpg" 
+    alt="De La Salle John Bosco College Campus" 
+    class="hero-bg"
+  >
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>About Our Institution</h1>
+    <p>Faith • Service • Communion</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT SECTION - IMAGE SLOT ON THE LEFT
+     ============================================================ -->
+<section class="about">
+  <div class="container">
+    <div class="about-image">
+      <img 
+        src="images/about-banner.jpg" 
+        alt="De La Salle John Bosco College" 
+      >
+    </div>
+    <div class="about-content">
+      <span class="section-tag">ABOUT DLSJBC</span>
+      <h2>Developing Future Lasallian Leaders</h2>
+      <p>De La Salle John Bosco College is dedicated to providing quality Catholic education rooted in the Lasallian tradition of faith, service, and communion. The institution promotes academic excellence, leadership, innovation, and social responsibility, preparing students to become competent professionals and compassionate citizens.</p>
+      <a href="#" class="btn-primary">Read More</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HISTORY - CENTERED TEXT (NO IMAGE)
+     ============================================================ -->
+<section class="history">
+  <div class="container">
+    <div class="history-content">
+      <span class="section-tag">OUR HISTORY</span>
+      <h2>A Legacy of Excellence</h2>
+      <p>From its humble beginnings, De La Salle John Bosco College has continued to grow as one of the leading educational institutions in the region. Through decades of dedication to quality education, the school has remained committed to forming students who excel academically while embodying Christian values. Today, DLSJBC continues to embrace innovation, community engagement, and global competitiveness, ensuring every graduate is prepared to serve society.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VISION MISSION ===== -->
+<section class="vmv">
+  <div class="section-title">
+    <span>OUR FOUNDATION</span>
+    <h2>Vision, Mission & Core Values</h2>
+  </div>
+  <div class="container vmv-grid">
+    <div class="vmv-card">
+      <div class="vmv-icon"><i class="fa-solid fa-eye"></i></div>
+      <h3>Vision</h3>
+      <p>To be a leading Catholic Lasallian educational institution recognized for academic excellence, Christian formation, innovation, and service to society while developing globally competitive graduates.</p>
+    </div>
+    <div class="vmv-card">
+      <div class="vmv-icon"><i class="fa-solid fa-bullseye"></i></div>
+      <h3>Mission</h3>
+      <p>We provide quality Lasallian education that nurtures faith, develops competence, promotes social responsibility, and inspires lifelong learning through excellent teaching, research, and community engagement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CORE VALUES ===== -->
+<section class="values">
+  <div class="section-title">
+    <span>LASALLIAN VALUES</span>
+    <h2>Faith • Service • Communion</h2>
+  </div>
+  <div class="container values-grid">
+    <div class="value-card">
+      <i class="fa-solid fa-cross"></i>
+      <h3>Faith</h3>
+      <p>Strengthening our relationship with God through Christian education, prayer, and moral formation.</p>
+    </div>
+    <div class="value-card">
+      <i class="fa-solid fa-hand-holding-heart"></i>
+      <h3>Service</h3>
+      <p>Responding to the needs of others with compassion, generosity, and a commitment to social justice.</p>
+    </div>
+    <div class="value-card">
+      <i class="fa-solid fa-people-group"></i>
+      <h3>Communion</h3>
+      <p>Building a united community founded on respect, collaboration, and shared responsibility.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY CHOOSE ===== -->
+<section class="why-dlsjbc">
+  <div class="section-title">
+    <span>WHY CHOOSE US</span>
+    <h2>Your Future Starts Here</h2>
+  </div>
+  <div class="container choose-grid">
+    <div class="choose-card"><i class="fa-solid fa-graduation-cap"></i><h3>Quality Education</h3><p>Academic programs designed to prepare students for successful professional careers.</p></div>
+    <div class="choose-card"><i class="fa-solid fa-award"></i><h3>Excellence</h3><p>A long tradition of developing graduates who excel in academics and leadership.</p></div>
+    <div class="choose-card"><i class="fa-solid fa-book-open"></i><h3>Holistic Formation</h3><p>Education that nurtures intellectual, spiritual, emotional, and social growth.</p></div>
+    <div class="choose-card"><i class="fa-solid fa-globe"></i><h3>Global Perspective</h3><p>Preparing students to thrive in an increasingly interconnected and competitive world.</p></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCHOOL SEAL - WITH YOUR OWN LOGO
+     ============================================================ -->
+<section class="school-seal">
+  <div class="container">
+    <div class="seal-image">
+      <img 
+        src="images/school-logo.jpg" 
+        alt="De La Salle John Bosco College Official Logo" 
+      >
+    </div>
+    <div class="seal-content">
+      <span class="section-tag">OUR SCHOOL SEAL</span>
+      <h2>The Symbol of Our Identity</h2>
+      <p>The school seal represents the identity, heritage, and guiding principles of De La Salle John Bosco College. Every symbol found within the seal reflects the institution's commitment to faith, academic excellence, leadership, and service to the community.</p>
+      <p>It serves as a constant reminder of the Lasallian mission of educating minds, touching hearts, and transforming lives.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCHOOL ALMA MATER - WITH AUDIO PLAYER
+     ============================================================ -->
+<section class="school-hymn">
+  <div class="section-title">
+    <span>OUR ALMA MATER</span>
+    <h2>School Alma Mater</h2>
+  </div>
+  <div class="container">
+    <div class="hymn-card">
+      <i class="fa-solid fa-music"></i>
+      <h3>De La Salle John Bosco College Alma Mater</h3>
+      
+      <!-- 
+        ★★★ REPLACE THE src BELOW WITH YOUR AUDIO FILE LINK ★★★
+        You can use:
+        1. A local file: src="audio/alma-mater.mp3"
+        2. A YouTube embed (see alternative below)
+        3. Any MP3 file URL
+      -->
+      <audio id="almaMaterAudio" controls>
+        <source src="audio/alma-mater.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      
+      <!-- Alternative: Play button that triggers audio -->
+      <button class="btn-play" onclick="playAlmaMater()">
+        <i class="fa-solid fa-play"></i> Listen to the Alma Mater
+      </button>
+      
+      <p style="margin-top: 15px; font-size: 14px; color: #999;">
+        <i class="fa-solid fa-headphones"></i> Click the play button or the button above to listen
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LEADERSHIP ===== -->
+<section class="leadership">
+  <div class="section-title">
+    <span>OUR LEADERSHIP</span>
+    <h2>School Administration</h2>
+  </div>
+  <div class="container leadership-grid">
+    <div class="leader-card">
+      <img src="images/school-president.png" alt="president">
+      <h3>School President</h3>
+      <p>BR. REY E. MEJIAS FSC</p>
+    </div>
+    <div class="leader-card">
+      <img src="images/school-vp.png" alt="vp">
+      <h3>Vice President</h3>
+      <p>DR. FLORDELIS EJERCITO</p>
+    </div>
+    <div class="leader-card">
+      <img src="images/school-principal.png" alt="principal">
+      <h3>Principal</h3>
+      <p>DR. JONATHAN C VILLASOR JR.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRAYER ===== -->
+<section class="prayer">
+  <div class="container">
+    <i class="fa-solid fa-hands-praying"></i>
+    <h2>Enter to Learn, Leave to Serve.</h2>
+    <p>Guided by Faith, Inspired by Service, United in Communion.</p>
+  </div>
+</section>
+
+<!-- ===== ACHIEVEMENTS ===== -->
+<section class="achievements">
+  <div class="section-title">
+    <span>ACHIEVEMENTS</span>
+    <h2>Our Milestones</h2>
+  </div>
+  <div class="container achievements-grid">
+    <div class="achievement-card">
+      <i class="fa-solid fa-trophy"></i>
+      <h3>Academic Excellence</h3>
+      <p>Recognized for producing graduates who excel in academics and professional careers.</p>
+    </div>
+    <div class="achievement-card">
+      <i class="fa-solid fa-medal"></i>
+      <h3>Leadership</h3>
+      <p>Developing responsible leaders committed to serving communities and society.</p>
+    </div>
+    <div class="achievement-card">
+      <i class="fa-solid fa-earth-asia"></i>
+      <h3>Community Engagement</h3>
+      <p>Strengthening partnerships through outreach, research, and extension programs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials">
+  <div class="section-title">
+    <span>STUDENT VOICES</span>
+    <h2>What Our Students Say</h2>
+  </div>
+  <div class="container testimonial-grid">
+    <div class="testimonial-card">
+      <i class="fa-solid fa-quote-left"></i>
+      <p>My experience at DLSJBC has helped me grow academically, spiritually, and personally.</p>
+      <h4>Student Name</h4>
+      <span>College Student</span>
+    </div>
+    <div class="testimonial-card">
+      <i class="fa-solid fa-quote-left"></i>
+      <p>The supportive community and dedicated faculty inspired me to pursue excellence every day.</p>
+      <h4>Student Name</h4>
+      <span>Senior High School</span>
+    </div>
+    <div class="testimonial-card">
+      <i class="fa-solid fa-quote-left"></i>
+      <p>DLSJBC has prepared me to become a competent professional and a servant leader.</p>
+      <h4>Student Name</h4>
+      <span>Alumnus</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT CTA ===== -->
+<section class="about-cta">
+  <div class="container">
+    <h2>Ready to Join the Lasallian Community?</h2>
+    <p>Take the next step toward a brighter future through quality Catholic education and holistic formation.</p>
+    <a href="#" class="btn-primary">Apply Now</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container footer-container">
+    <div class="footer-logo">
+      <img src="images/school-logo.jpg">
+      <h3>De La Salle<br>John Bosco College</h3>
+      <p>Faith • Service • Communion</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="campus-life.html">Campus Life</a>
+      <a href="news.html">News</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <a href="https://www.facebook.com/dlsjbc" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/dlsjbc_scb?igsh=MzEyN3FwbjBzcXNs" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@dlsjbc" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2026 De La Salle John Bosco College. All Rights Reserved.
+  </div>
+</footer>
+
+<!-- ===== JAVASCRIPT FOR AUDIO PLAYBACK ===== -->
+<script>
+  // Get the audio element
+  const audio = document.getElementById('almaMaterAudio');
+  
+  // Function to play the alma mater
+  function playAlmaMater() {
+    if (audio.paused) {
+      audio.play();
+      // Change button text while playing
+      const btn = document.querySelector('.btn-play');
+      btn.innerHTML = '<i class="fa-solid fa-pause"></i> Pause';
+    } else {
+      audio.pause();
+      const btn = document.querySelector('.btn-play');
+      btn.innerHTML = '<i class="fa-solid fa-play"></i> Listen to the Alma Mater';
+    }
+  }
+  
+  // Reset button text when audio ends
+  audio.addEventListener('ended', function() {
+    const btn = document.querySelector('.btn-play');
+    btn.innerHTML = '<i class="fa-solid fa-play"></i> Listen to the Alma Mater';
+  });
+  
+  // Update button text when audio is paused
+  audio.addEventListener('pause', function() {
+    if (!audio.ended) {
+      const btn = document.querySelector('.btn-play');
+      btn.innerHTML = '<i class="fa-solid fa-play"></i> Listen to the Alma Mater';
+    }
+  });
+</script>
+
+</body>
+</html>

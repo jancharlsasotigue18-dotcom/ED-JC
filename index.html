@@ -1,0 +1,546 @@
+<style>
+    /* ----- RESET & BASE ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: #1e1e1e;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ----- SECTION TITLE ----- */
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .section-title span {
+      display: inline-block;
+      background: #006633;
+      color: #fff;
+      padding: 6px 20px;
+      border-radius: 50px;
+      font-size: 14px;
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
+    .section-title h2 {
+      font-size: 40px;
+      color: #004225;
+      margin-top: 15px;
+      font-weight: 700;
+    }
+
+    /* ----- BUTTONS ----- */
+    .btn-primary {
+      display: inline-block;
+      background: #006633;
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.35s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: #FFD54F;
+      color: #004225;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    /* ----- NAVIGATION ----- */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 50px;
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      flex-wrap: wrap;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo img {
+      height: 55px; /* Sightly increased to display details of the official logo */
+      width: auto;
+      object-fit: contain;
+    }
+    .logo-text h2 {
+      font-size: 20px;
+      color: #004225;
+      line-height: 1.2;
+    }
+    .logo-text span {
+      font-size: 14px;
+      color: #006633;
+      font-weight: 500;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      font-weight: 500;
+    }
+    .nav-links a {
+      color: #1e1e1e;
+      transition: 0.2s;
+    }
+    .nav-links a.active {
+      color: #006633;
+      font-weight: 600;
+    }
+    .nav-links a:hover {
+      color: #006633;
+    }
+    .btn-admission {
+      background: #006633;
+      color: #fff;
+      padding: 10px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .btn-admission:hover {
+      background: #004225;
+      transform: scale(1.02);
+    }
+
+    /* ============================================================
+        HOME PAGE HERO
+       ============================================================ */
+    .home-hero {
+      position: relative;
+      height: 70vh;
+      min-height: 450px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* FIXED: Restored opacity to 1.0 so the image retains full clarity */
+    .home-hero .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 1.0; 
+      z-index: 1;
+    }
+
+    /* FIXED: Thinned down overlay using softer rgba transparency parameters (0.45 and 0.35) */
+    .home-hero .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 40, 20, 0.45), rgba(0, 70, 40, 0.35));
+      z-index: 2;
+    }
+
+    .home-hero .hero-content {
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      color: #fff;
+      padding: 0 20px;
+      max-width: 800px;
+    }
+    .home-hero h1 {
+      font-size: 60px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.5); /* Enhanced shadow for text readability on lighter overlay */
+    }
+    .home-hero p {
+      font-size: 22px;
+      color: #FFD54F;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+    .home-hero .btn-hero {
+      display: inline-block;
+      background: #FFD54F;
+      color: #004225;
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 18px;
+      transition: 0.35s;
+      border: none;
+      cursor: pointer;
+      margin: 0 10px;
+    }
+    .home-hero .btn-hero:hover {
+      background: #fff;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .home-hero .btn-hero-outline {
+      display: inline-block;
+      background: transparent;
+      color: #fff;
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 18px;
+      transition: 0.35s;
+      border: 2px solid #fff;
+      cursor: pointer;
+      margin: 0 10px;
+    }
+    .home-hero .btn-hero-outline:hover {
+      background: #fff;
+      color: #004225;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    /* ============================================================
+        HOME INTRO SECTION
+       ============================================================ */
+    .home-intro {
+      padding: 90px 0;
+      background: #fff;
+    }
+    .home-intro .container {
+      text-align: center;
+      max-width: 900px;
+    }
+    .home-intro h2 {
+      font-size: 40px;
+      color: #004225;
+      margin-bottom: 20px;
+    }
+    .home-intro p {
+      color: #555;
+      font-size: 18px;
+      line-height: 1.9;
+      margin-bottom: 30px;
+    }
+
+    /* ============================================================
+        HOME FEATURES
+       ============================================================ */
+    .home-features {
+      padding: 90px 0;
+      background: #f7f9f8;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .feature-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      transition: 0.4s;
+    }
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+    }
+    .feature-card i {
+      font-size: 50px;
+      color: #006633;
+      margin-bottom: 20px;
+    }
+    .feature-card h3 {
+      color: #004225;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+    .feature-card p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+        HOME CTA
+       ============================================================ */
+    .home-cta {
+      background: linear-gradient(rgba(0,90,45,0.94), rgba(0,60,30,0.94));
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .home-cta h2 {
+      font-size: 40px;
+      margin-bottom: 18px;
+    }
+    .home-cta p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: 18px;
+    }
+    .home-cta .btn-cta {
+      display: inline-block;
+      background: #FFD54F;
+      color: #004225;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.35s;
+      margin: 0 10px;
+    }
+    .home-cta .btn-cta:hover {
+      background: #fff;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    /* ============================================================
+        FOOTER
+       ============================================================ */
+    footer {
+      background: #002b17;
+      color: #ddd;
+      padding: 50px 20px 20px;
+    }
+    .footer-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-logo img {
+      height: 55px;
+      margin-bottom: 12px;
+    }
+    .footer-logo h3 {
+      color: #fff;
+      font-size: 22px;
+      line-height: 1.3;
+    }
+    .footer-logo p {
+      margin-top: 8px;
+      color: #FFD54F;
+    }
+    .footer-links h4, .footer-social h4 {
+      color: #fff;
+      margin-bottom: 18px;
+    }
+    .footer-links a {
+      display: block;
+      margin-bottom: 10px;
+      color: #bbb;
+      transition: 0.2s;
+    }
+    .footer-links a:hover {
+      color: #FFD54F;
+    }
+    .footer-social a {
+      display: inline-block;
+      margin-right: 18px;
+      font-size: 24px;
+      color: #bbb;
+      transition: 0.2s;
+    }
+    .footer-social a:hover {
+      color: #FFD54F;
+    }
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    /* ============================================================
+        RESPONSIVE
+       ============================================================ */
+    @media (max-width: 992px) {
+      nav { padding: 18px 30px; }
+      .nav-links { gap: 16px; flex-wrap: wrap; }
+      .features-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+      .home-hero h1 { font-size: 44px; }
+    }
+    @media (max-width: 768px) {
+      .home-hero { height: 50vh; min-height: 350px; }
+      .home-hero h1 { font-size: 32px; }
+      .home-hero p { font-size: 18px; }
+      .home-hero .btn-hero, .home-hero .btn-hero-outline {
+        padding: 12px 28px;
+        font-size: 15px;
+        display: block;
+        margin: 10px auto;
+        max-width: 250px;
+      }
+      .section-title h2 { font-size: 30px; }
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .btn-primary { padding: 12px 28px; }
+      .nav-links { display: none; }
+      .btn-admission { padding: 8px 18px; font-size: 14px; }
+      .home-cta h2 { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="logo">
+    <!-- FIXED: SVG placeholder swapped for the official transparent DLSJBC logo -->
+    <img src="images/school-logo.jpg" alt="DLSJBC Logo">
+    <div class="logo-text">
+      <h2>De La Salle</h2>
+      <span>John Bosco College</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a class="active" href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="academics.html">Academics</a></li>
+    <li><a href="admissions.html">Admissions</a></li>
+    <li><a href="campus-life.html">Campus Life</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="#" class="btn-admission">Apply Now</a>
+</nav>
+
+<!-- ============================================================
+     HOME HERO
+     ============================================================ -->
+<section class="home-hero">
+  <img 
+    src="images/about-banner.jpg" 
+    alt="De La Salle John Bosco College" 
+    class="hero-bg"
+  >
+  <!-- FIXED: This layer is now styled with a highly transparent, thin overlay tint in the CSS -->
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>Welcome to DLSJBC</h1>
+    <p>Faith • Service • Communion</p>
+    <div>
+      <a href="about.html" class="btn-hero">Learn About Us</a>
+      <a href="academics.html" class="btn-hero-outline">Explore Academics</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HOME INTRO
+     ============================================================ -->
+<section class="home-intro">
+  <div class="container">
+    <span class="section-tag">WELCOME</span>
+    <h2>De La Salle John Bosco College</h2>
+    <p>DLSJBC is a Catholic Lasallian educational institution committed to providing quality education rooted in faith, service, and communion. We develop future leaders who are academically excellent, socially responsible, and grounded in Christian values.</p>
+    <a href="about.html" class="btn-primary">Read More</a>
+  </div>
+</section>
+
+<!-- ============================================================
+     HOME FEATURES
+     ============================================================ -->
+<section class="home-features">
+  <div class="section-title">
+    <span>WHY DLSJBC</span>
+    <h2>Your Future Starts Here</h2>
+  </div>
+  <div class="container features-grid">
+    <div class="feature-card">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <h3>Quality Education</h3>
+      <p>Academic programs designed to prepare students for successful professional careers and lifelong learning.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fa-solid fa-cross"></i>
+      <h3>Lasallian Formation</h3>
+      <p>Faith-centered education that develops moral character, leadership, and a commitment to service.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fa-solid fa-people-group"></i>
+      <h3>Supportive Community</h3>
+      <p>A nurturing environment where students grow academically, spiritually, and socially.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HOME CTA
+     ============================================================ -->
+<section class="home-cta">
+  <div class="container">
+    <h2>Ready to Begin Your Journey?</h2>
+    <p>Join the Lasallian community and experience quality Catholic education that prepares you for a successful future.</p>
+    <a href="admissions.html" class="btn-cta">Apply Now</a>
+    <a href="academics.html" class="btn-cta" style="background:transparent; border:2px solid #FFD54F; color:#FFD54F;">Explore Programs</a>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="container footer-container">
+    <div class="footer-logo">
+      <img src="images/school-logo.jpg">
+      <h3>De La Salle<br>John Bosco College</h3>
+      <p>Faith • Service • Communion</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="campus-life.html">Campus Life</a>
+      <a href="news.html">News</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <a href="https://www.facebook.com/dlsjbc" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/dlsjbc_scb?igsh=MzEyN3FwbjBzcXNs" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@dlsjbc" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2026 De La Salle John Bosco College. All Rights Reserved.
+  </div>
+</footer>
+
+</body>
+</html>

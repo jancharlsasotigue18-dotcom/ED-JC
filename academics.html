@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academics | De La Salle John Bosco College</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    /* ----- RESET & BASE ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: #1e1e1e;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ----- SECTION TITLE ----- */
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .section-title span {
+      display: inline-block;
+      background: #006633;
+      color: #fff;
+      padding: 6px 20px;
+      border-radius: 50px;
+      font-size: 14px;
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
+    .section-title h2 {
+      font-size: 40px;
+      color: #004225;
+      margin-top: 15px;
+      font-weight: 700;
+    }
+
+    /* ----- BUTTONS ----- */
+    .btn-primary {
+      display: inline-block;
+      background: #006633;
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.35s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: #FFD54F;
+      color: #004225;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    /* ----- NAVIGATION ----- */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 50px;
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      flex-wrap: wrap;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo img {
+      height: 55px; /* Clean scale adjustment for official crest */
+      width: auto;
+      object-fit: contain;
+    }
+    .logo-text h2 {
+      font-size: 20px;
+      color: #004225;
+      line-height: 1.2;
+    }
+    .logo-text span {
+      font-size: 14px;
+      color: #006633;
+      font-weight: 500;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      font-weight: 500;
+    }
+    .nav-links a {
+      color: #1e1e1e;
+      transition: 0.2s;
+    }
+    .nav-links a.active {
+      color: #006633;
+      font-weight: 600;
+    }
+    .nav-links a:hover {
+      color: #006633;
+    }
+    .btn-admission {
+      background: #006633;
+      color: #fff;
+      padding: 10px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .btn-admission:hover {
+      background: #004225;
+      transform: scale(1.02);
+    }
+
+    /* ============================================================
+        PAGE HERO - LIGHTENED FOR EXCELLENT BANNER VISIBILITY
+       ============================================================ */
+    .page-hero {
+      position: relative;
+      height: 60vh;
+      min-height: 380px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .page-hero .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 1.0; /* Restored to full visibility */
+      z-index: 1;
+    }
+
+    /* FIXED: Lighter overlay (0.45 and 0.35 opacity) to show off banner graphics clearly */
+    .page-hero .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 40, 20, 0.45), rgba(0, 70, 40, 0.35));
+      z-index: 2;
+    }
+
+    .page-hero .hero-content {
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      color: #fff;
+      padding: 0 20px;
+    }
+    .page-hero h1 {
+      font-size: 58px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.5); /* Boosted shadow for strong readability */
+    }
+    .page-hero p {
+      font-size: 24px;
+      color: #FFD54F;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+
+    /* ============================================================
+        ACADEMIC PROGRAMS
+       ============================================================ */
+    .programs {
+      padding: 90px 0;
+      background: #fff;
+    }
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+    }
+    .program-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 45px 35px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+      transition: 0.4s;
+      border: 1px solid #f0f5f2;
+    }
+    .program-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+    }
+    .program-card i {
+      font-size: 48px;
+      color: #006633;
+      margin-bottom: 20px;
+    }
+    .program-card h3 {
+      color: #004225;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    .program-card p {
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .program-card a {
+      color: #006633;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .program-card a:hover {
+      color: #FFD54F;
+    }
+
+    /* ============================================================
+        STATS
+       ============================================================ */
+    .stats {
+      padding: 80px 0;
+      background: #f7f9f8;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+    .stat-box {
+      text-align: center;
+      padding: 30px 20px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      transition: 0.4s;
+    }
+    .stat-box:hover {
+      transform: translateY(-5px);
+    }
+    .stat-box i {
+      font-size: 40px;
+      color: #006633;
+      margin-bottom: 15px;
+    }
+    .stat-box h2 {
+      font-size: 48px;
+      color: #004225;
+      font-weight: 700;
+    }
+    .stat-box p {
+      color: #666;
+      font-size: 16px;
+    }
+
+    /* ============================================================
+        DEPARTMENTS
+       ============================================================ */
+    .departments {
+      padding: 90px 0;
+      background: #fff;
+    }
+    .department-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+    .department-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px 25px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      transition: 0.4s;
+      border: 1px solid #f0f5f2;
+    }
+    .department-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+    }
+    .department-card i {
+      font-size: 40px;
+      color: #006633;
+      margin-bottom: 20px;
+    }
+    .department-card h3 {
+      color: #004225;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .department-card p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+        SENIOR HIGH SCHOOL TRACKS
+       ============================================================ */
+    .shs-tracks {
+      padding: 90px 0;
+      background: #f7f9f8;
+    }
+    .track-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+    .track-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px 25px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      transition: 0.4s;
+    }
+    .track-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+    }
+    .track-card i {
+      font-size: 40px;
+      color: #006633;
+      margin-bottom: 20px;
+    }
+    .track-card h3 {
+      color: #004225;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .track-card p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+        FEATURED COURSES - CRISTAL CLEAR IMAGES (BLUR COMPLETELY REMOVED)
+       ============================================================ */
+    .featured-courses {
+      padding: 90px 0;
+      background: #fff;
+    }
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .course-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+      transition: 0.4s;
+    }
+    .course-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+    }
+    .course-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      /* FIXED: Blur filters eliminated so course images load beautifully immediately */
+      filter: none; 
+      transform: scale(1.0);
+      transition: 0.4s ease-in-out;
+    }
+    .course-card:hover img {
+      transform: scale(1.04); /* Elegant, non-distracting hover scale */
+    }
+    .course-content {
+      padding: 25px 30px 30px;
+    }
+    .course-content h3 {
+      color: #004225;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .course-content p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+        FACILITIES
+       ============================================================ */
+    .facilities {
+      padding: 90px 0;
+      background: #f7f9f8;
+    }
+    .facility-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+    .facility-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      transition: 0.4s;
+    }
+    .facility-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+    }
+    .facility-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .facility-content {
+      padding: 20px 25px 25px;
+    }
+    .facility-content h3 {
+      color: #004225;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .facility-content p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+        WHY STUDY
+       ============================================================ */
+    .why-study {
+      padding: 90px 0;
+      background: #fff;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .why-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 35px 25px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      transition: 0.4s;
+      border: 1px solid #f0f5f2;
+    }
+    .why-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+    }
+    .why-card i {
+      font-size: 40px;
+      color: #006633;
+      margin-bottom: 18px;
+    }
+    .why-card h3 {
+      color: #004225;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .why-card p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+        SUPPORT SERVICES
+       ============================================================ */
+    .support-services {
+      padding: 90px 0;
+      background: #f7f9f8;
+    }
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+    .support-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 35px 25px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      transition: 0.4s;
+    }
+    .support-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+    }
+    .support-card i {
+      font-size: 40px;
+      color: #006633;
+      margin-bottom: 18px;
+    }
+    .support-card h3 {
+      color: #004225;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .support-card p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+        FAQ
+       ============================================================ */
+    .faq {
+      padding: 90px 0;
+      background: #fff;
+    }
+    .faq-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: #f7f9f8;
+      border-radius: 15px;
+      padding: 30px 35px;
+      margin-bottom: 20px;
+      transition: 0.3s;
+    }
+    .faq-item:hover {
+      background: #edf2ef;
+    }
+    .faq-item h3 {
+      color: #004225;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .faq-item p {
+      color: #555;
+      line-height: 1.8;
+    }
+
+    /* ============================================================
+        ACADEMIC CTA
+       ============================================================ */
+    .academic-cta {
+      background: linear-gradient(rgba(0,90,45,0.94), rgba(0,60,30,0.94));
+      color: #fff;
+      text-align: center;
+      padding: 90px 20px;
+    }
+    .academic-cta h2 {
+      font-size: 42px;
+      margin-bottom: 18px;
+    }
+    .academic-cta p {
+      max-width: 700px;
+      margin: 0 auto 35px;
+      font-size: 18px;
+    }
+
+    /* ============================================================
+        CONTACT
+       ============================================================ */
+    .contact {
+      padding: 90px 0;
+      background: #f7f9f8;
+    }
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .contact-info h3 {
+      color: #004225;
+      font-size: 28px;
+      margin-bottom: 25px;
+    }
+    .contact-info p {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .contact-info i {
+      color: #006633;
+      font-size: 20px;
+      width: 30px;
+    }
+    .contact-map iframe {
+      width: 100%;
+      height: 350px;
+      border-radius: 20px;
+      border: none;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.10);
+    }
+
+    /* ============================================================
+        FOOTER
+       ============================================================ */
+    footer {
+      background: #002b17;
+      color: #ddd;
+      padding: 50px 20px 20px;
+    }
+    .footer-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-logo img {
+      height: 55px;
+      margin-bottom: 12px;
+    }
+    .footer-logo h3 {
+      color: #fff;
+      font-size: 22px;
+      line-height: 1.3;
+    }
+    .footer-logo p {
+      margin-top: 8px;
+      color: #FFD54F;
+    }
+    .footer-links h4, .footer-social h4 {
+      color: #fff;
+      margin-bottom: 18px;
+    }
+    .footer-links a {
+      display: block;
+      margin-bottom: 10px;
+      color: #bbb;
+      transition: 0.2s;
+    }
+    .footer-links a:hover {
+      color: #FFD54F;
+    }
+    .footer-social a {
+      display: inline-block;
+      margin-right: 18px;
+      font-size: 24px;
+      color: #bbb;
+      transition: 0.2s;
+    }
+    .footer-social a:hover {
+      color: #FFD54F;
+    }
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    /* ============================================================
+        RESPONSIVE
+       ============================================================ */
+    @media (max-width: 992px) {
+      nav { padding: 18px 30px; }
+      .nav-links { gap: 16px; flex-wrap: wrap; }
+      .program-grid, .department-grid, .track-grid, 
+      .course-grid, .facility-grid, .support-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .stats-grid, .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+      .page-hero h1 { font-size: 44px; }
+    }
+    @media (max-width: 768px) {
+      .page-hero { height: 45vh; min-height: 300px; }
+      .page-hero h1 { font-size: 32px; }
+      .page-hero p { font-size: 18px; }
+      .section-title h2 { font-size: 30px; }
+      .program-grid, .department-grid, .track-grid, 
+      .course-grid, .facility-grid, .support-grid,
+      .stats-grid, .why-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .btn-primary { padding: 12px 28px; }
+      .nav-links { display: none; }
+      .btn-admission { padding: 8px 18px; font-size: 14px; }
+      .academic-cta h2 { font-size: 30px; }
+      .contact-info p { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="logo">
+    <!-- FIXED: SVG placeholder replaced with official high-res transparent DLSJBC logo -->
+    <img src="images/school-logo.jpg" alt="DLSJBC Logo">
+    <div class="logo-text">
+      <h2>De La Salle</h2>
+      <span>John Bosco College</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a class="active" href="academics.html">Academics</a></li>
+    <li><a href="admissions.html">Admissions</a></li>
+    <li><a href="campus-life.html">Campus Life</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="#" class="btn-admission">Apply Now</a>
+</nav>
+
+<!-- ============================================================
+     PAGE HERO - WITH YOUR BACKGROUND IMAGE (LOW OPACITY)
+     ============================================================ -->
+<section class="page-hero">
+  <img 
+    src="images/academics-banner.jpg" 
+    alt="Academic Excellence" 
+    class="hero-bg"
+  >
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>Academic Excellence</h1>
+    <p>Quality Education • Christian Formation • Future Leaders</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     ACADEMIC PROGRAMS
+     ============================================================ -->
+<section class="programs">
+  <div class="section-title">
+    <span>ACADEMIC PROGRAMS</span>
+    <h2>Choose Your Academic Journey</h2>
+  </div>
+  <div class="container program-grid">
+    <div class="program-card">
+      <i class="fa-solid fa-school"></i>
+      <h3>Basic Education</h3>
+      <p>Providing a strong educational foundation that develops character, academic excellence, and Christian values.</p>
+      <a href="#">Learn More →</a>
+    </div>
+    <div class="program-card">
+      <i class="fa-solid fa-book-open"></i>
+      <h3>Senior High School</h3>
+      <p>Offering academic tracks that prepare learners for college, employment, and entrepreneurship.</p>
+      <a href="#">Learn More →</a>
+    </div>
+    <div class="program-card">
+      <i class="fa-solid fa-user-graduate"></i>
+      <h3>College</h3>
+      <p>Industry-focused undergraduate programs that equip students with professional knowledge, skills, and leadership.</p>
+      <a href="#">Learn More →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATS
+     ============================================================ -->
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat-box">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <h2>20+</h2>
+      <p>Academic Programs</p>
+    </div>
+    <div class="stat-box">
+      <i class="fa-solid fa-building-columns"></i>
+      <h2>5</h2>
+      <p>Academic Departments</p>
+    </div>
+    <div class="stat-box">
+      <i class="fa-solid fa-chalkboard-user"></i>
+      <h2>150+</h2>
+      <p>Qualified Faculty</p>
+    </div>
+    <div class="stat-box">
+      <i class="fa-solid fa-award"></i>
+      <h2>100%</h2>
+      <p>Lasallian Education</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     COLLEGES & DEPARTMENTS
+     ============================================================ -->
+<section class="departments">
+  <div class="section-title">
+    <span>COLLEGES & DEPARTMENTS</span>
+    <h2>Explore Our Academic Departments</h2>
+  </div>
+  <div class="container department-grid">
+    <div class="department-card">
+      <i class="fa-solid fa-computer"></i>
+      <h3>College of Information Technology</h3>
+      <p>Develop skills in programming, networking, cybersecurity, and software development.</p>
+    </div>
+    <div class="department-card">
+      <i class="fa-solid fa-briefcase"></i>
+      <h3>College of Business</h3>
+      <p>Learn entrepreneurship, financial management, marketing, and business leadership.</p>
+    </div>
+    <div class="department-card">
+      <i class="fa-solid fa-scale-balanced"></i>
+      <h3>College of Criminal Justice</h3>
+      <p>Prepare for careers in law enforcement, criminology, and public safety.</p>
+    </div>
+    <div class="department-card">
+      <i class="fa-solid fa-book-open-reader"></i>
+      <h3>College of Education</h3>
+      <p>Develop future educators through innovative teaching and professional training.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SENIOR HIGH SCHOOL TRACKS
+     ============================================================ -->
+<section class="shs-tracks">
+  <div class="section-title">
+    <span>SENIOR HIGH SCHOOL</span>
+    <h2>Academic Tracks & Strands</h2>
+  </div>
+  <div class="container track-grid">
+    <div class="track-card">
+      <i class="fa-solid fa-flask"></i>
+      <h3>STEM</h3>
+      <p>Science, Technology, Engineering and Mathematics.</p>
+    </div>
+    <div class="track-card">
+      <i class="fa-solid fa-chart-line"></i>
+      <h3>ABM</h3>
+      <p>Accountancy, Business and Management.</p>
+    </div>
+    <div class="track-card">
+      <i class="fa-solid fa-pen-nib"></i>
+      <h3>HUMSS</h3>
+      <p>Humanities and Social Sciences.</p>
+    </div>
+    <div class="track-card">
+      <i class="fa-solid fa-laptop-code"></i>
+      <h3>TVL - ICT</h3>
+      <p>Information and Communications Technology.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FEATURED COURSES - WITH BLURRED IMAGES
+     ============================================================ -->
+<section class="featured-courses">
+  <div class="section-title">
+    <span>POPULAR COURSES</span>
+    <h2>Featured Degree Programs</h2>
+  </div>
+  <div class="container course-grid">
+    <div class="course-card">
+      <!-- 
+        ★★★ REPLACE THE src BELOW WITH YOUR OWN IMAGE ★★★
+        The image has filter: blur(3px) applied
+      -->
+      <img src="images/it-logo.jpg" alt="BS Information Technology">
+      <div class="course-content">
+        <h3>Bachelor of Science in Information Technology</h3>
+        <p>Learn programming, web development, networking, databases, and cybersecurity.</p>
+      </div>
+    </div>
+    <div class="course-card">
+      <img src="images/bs-logo.png" alt="BS Business Administration">
+      <div class="course-content">
+        <h3>Bachelor of Science in Business Administration</h3>
+        <p>Prepare for careers in management, marketing, and entrepreneurship.</p>
+      </div>
+    </div>
+    <div class="course-card">
+      <img src="images/hm-logo.png" alt="BS Hospitality Management">
+      <div class="course-content">
+        <h3>Bachelor of Science in Hospitality Management</h3>
+        <p>Develop skills in hotel and restaurant operations, tourism, event planning, and customer service excellence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LEARNING FACILITIES
+     ============================================================ -->
+<section class="facilities">
+  <div class="section-title">
+    <span>LEARNING FACILITIES</span>
+    <h2>Modern Facilities for Better Learning</h2>
+  </div>
+  <div class="container facility-grid">
+    <div class="facility-card">
+      <img src="images/library.jpg" alt="Library">
+      <div class="facility-content">
+        <h3>Learning Resource Center</h3>
+        <p>A well-equipped library providing printed and digital learning resources to support research, innovation, and academic excellence.</p>
+      </div>
+    </div>
+    <div class="facility-card">
+      <img src="images/comlab.jpg" alt="Computer Lab">
+      <div class="facility-content">
+        <h3>Computer Laboratories</h3>
+        <p>Modern computer laboratories with updated hardware, software, and internet access for hands-on learning.</p>
+      </div>
+    </div>
+    <div class="facility-card">
+      <img src="images/lab.jpg" alt="Science Lab">
+      <div class="facility-content">
+        <h3>Science Laboratories</h3>
+        <p>Laboratories designed to support practical experiments in Biology, Chemistry, and Physics.</p>
+      </div>
+    </div>
+    <div class="facility-card">
+      <img src="images/gym.jpg" alt="Gymnasium">
+      <div class="facility-content">
+        <h3>Sports & Recreation</h3>
+        <p>Facilities that promote physical wellness, teamwork, leadership, and student engagement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY STUDY AT DLSJBC
+     ============================================================ -->
+<section class="why-study">
+  <div class="section-title">
+    <span>WHY CHOOSE DLSJBC</span>
+    <h2>Your Future Begins Here</h2>
+  </div>
+  <div class="container why-grid">
+    <div class="why-card">
+      <i class="fa-solid fa-user-graduate"></i>
+      <h3>Student-Centered Learning</h3>
+      <p>We nurture every learner through quality instruction and individualized support.</p>
+    </div>
+    <div class="why-card">
+      <i class="fa-solid fa-chalkboard-user"></i>
+      <h3>Experienced Faculty</h3>
+      <p>Learn from qualified educators committed to academic excellence and innovation.</p>
+    </div>
+    <div class="why-card">
+      <i class="fa-solid fa-laptop-code"></i>
+      <h3>Technology-Enhanced Education</h3>
+      <p>Modern classrooms and digital resources enrich the learning experience.</p>
+    </div>
+    <div class="why-card">
+      <i class="fa-solid fa-handshake"></i>
+      <h3>Industry Partnerships</h3>
+      <p>Internship opportunities and collaborations prepare students for professional careers.</p>
+    </div>
+    <div class="why-card">
+      <i class="fa-solid fa-globe"></i>
+      <h3>Global Perspective</h3>
+      <p>Programs encourage critical thinking, innovation, and responsible citizenship.</p>
+    </div>
+    <div class="why-card">
+      <i class="fa-solid fa-cross"></i>
+      <h3>Lasallian Formation</h3>
+      <p>Faith, service, and communion remain at the center of every student's journey.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SUPPORT SERVICES
+     ============================================================ -->
+<section class="support-services">
+  <div class="section-title">
+    <span>STUDENT SUPPORT</span>
+    <h2>Academic Support Services</h2>
+  </div>
+  <div class="container support-grid">
+    <div class="support-card">
+      <i class="fa-solid fa-book"></i>
+      <h3>Library Services</h3>
+      <p>Access books, journals, online databases, and research assistance.</p>
+    </div>
+    <div class="support-card">
+      <i class="fa-solid fa-user-group"></i>
+      <h3>Guidance Office</h3>
+      <p>Counseling services that support students' personal and academic development.</p>
+    </div>
+    <div class="support-card">
+      <i class="fa-solid fa-desktop"></i>
+      <h3>Computer Services</h3>
+      <p>Reliable internet access and technical support for digital learning.</p>
+    </div>
+    <div class="support-card">
+      <i class="fa-solid fa-heart"></i>
+      <h3>Campus Ministry</h3>
+      <p>Spiritual formation and activities rooted in Lasallian values.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="faq">
+  <div class="section-title">
+    <span>FREQUENTLY ASKED QUESTIONS</span>
+    <h2>Questions About Our Academic Programs</h2>
+  </div>
+  <div class="container faq-container">
+    <div class="faq-item">
+      <h3>What academic programs does DLSJBC offer?</h3>
+      <p>DLSJBC offers programs in Basic Education, Senior High School, and College. Visit the Admissions Office or official website for the latest list of available programs.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How can I apply for admission?</h3>
+      <p>Complete the admission requirements, submit the necessary documents, and follow the enrollment procedures provided by the school.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Are scholarships available?</h3>
+      <p>Scholarship opportunities may be available depending on school policies and partner organizations. Contact the Admissions Office for more information.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do students have access to modern facilities?</h3>
+      <p>Yes. Students have access to laboratories, library resources, learning spaces, sports facilities, and campus services that support their academic journey.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ACADEMIC CTA
+     ============================================================ -->
+<section class="academic-cta">
+  <div class="container">
+    <h2>Begin Your Academic Journey Today</h2>
+    <p>Join the Lasallian community and experience quality Catholic education that prepares you for a successful future.</p>
+    <a href="#" class="btn-primary">Apply for Admission</a>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT
+     ============================================================ -->
+<section class="contact">
+  <div class="section-title">
+    <span>CONTACT US</span>
+    <h2>Get in Touch</h2>
+  </div>
+  <div class="container contact-container">
+    <div class="contact-info">
+      <h3>Admissions Office</h3>
+      <p><i class="fa-solid fa-location-dot"></i> De La Salle John Bosco College</p>
+      <p><i class="fa-solid fa-phone"></i> +63 XXX XXX XXXX</p>
+      <p><i class="fa-solid fa-envelope"></i> admissions@dlsjbc.edu.ph</p>
+      <p><i class="fa-solid fa-clock"></i> Monday - Friday | 8:00 AM - 5:00 PM</p>
+    </div>
+    <div class="contact-map">
+      <iframe src="https://www.google.com/maps?q=De+La+Salle+John+Bosco+College&output=embed" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="container footer-container">
+    <div class="footer-logo">
+      <img src="images/school-logo.jpg">
+      <p>Faith • Service • Communion</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="campus-life.html">Campus Life</a>
+      <a href="news.html">News</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <a href="https://www.facebook.com/dlsjbc" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/dlsjbc_scb?igsh=MzEyN3FwbjBzcXNs" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@dlsjbc" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2026 De La Salle John Bosco College. All Rights Reserved.
+  </div>
+</footer>
+
+</body>
+</html>

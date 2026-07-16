@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | De La Salle John Bosco College</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    /* ----- RESET & BASE ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: #1e1e1e;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ----- SECTION TITLE ----- */
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .section-title span {
+      display: inline-block;
+      background: #006633;
+      color: #fff;
+      padding: 6px 20px;
+      border-radius: 50px;
+      font-size: 14px;
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
+    .section-title h2 {
+      font-size: 40px;
+      color: #004225;
+      margin-top: 15px;
+      font-weight: 700;
+    }
+
+    /* ----- BUTTONS ----- */
+    .btn-primary {
+      display: inline-block;
+      background: #006633;
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.35s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: #FFD54F;
+      color: #004225;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    /* ----- NAVIGATION ----- */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 50px;
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      flex-wrap: wrap;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo img {
+      height: 55px; /* Clean scale adjustment for the official crest */
+      width: auto;
+      object-fit: contain;
+    }
+    .logo-text h2 {
+      font-size: 20px;
+      color: #004225;
+      line-height: 1.2;
+    }
+    .logo-text span {
+      font-size: 14px;
+      color: #006633;
+      font-weight: 500;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      font-weight: 500;
+    }
+    .nav-links a {
+      color: #1e1e1e;
+      transition: 0.2s;
+    }
+    .nav-links a.active {
+      color: #006633;
+      font-weight: 600;
+    }
+    .nav-links a:hover {
+      color: #006633;
+    }
+    .btn-admission {
+      background: #006633;
+      color: #fff;
+      padding: 10px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .btn-admission:hover {
+      background: #004225;
+      transform: scale(1.02);
+    }
+
+    /* ============================================================
+        PAGE HERO - CONTACT (LIGHTENED OVERLAY)
+       ============================================================ */
+    .page-hero {
+      position: relative;
+      height: 50vh;
+      min-height: 350px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .page-hero .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 1.0; /* Restored to full opacity so the banner shows properly */
+      z-index: 1;
+    }
+
+    /* Softened green gradient overlay (from 0.85/0.75 down to 0.45/0.35) for better visual pop */
+    .page-hero .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 40, 20, 0.45), rgba(0, 70, 40, 0.35));
+      z-index: 2;
+    }
+
+    .page-hero .hero-content {
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      color: #fff;
+      padding: 0 20px;
+    }
+    .page-hero h1 {
+      font-size: 58px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.5); /* Stronger contrast against light backgrounds */
+    }
+    .page-hero p {
+      font-size: 22px;
+      color: #FFD54F;
+      letter-spacing: 1px;
+      max-width: 700px;
+      margin: 0 auto;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4); /* Stronger contrast */
+    }
+
+    /* ============================================================
+        CONTACT CONTENT
+       ============================================================ */
+    .contact-content {
+      padding: 90px 0;
+      background: #fff;
+    }
+
+    /* Contact Info Cards */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    .contact-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 35px 25px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      transition: 0.4s;
+      border: 1px solid #f0f5f2;
+    }
+    .contact-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+    }
+    .contact-card i {
+      font-size: 40px;
+      color: #006633;
+      margin-bottom: 18px;
+    }
+    .contact-card h3 {
+      color: #004225;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .contact-card p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* Two Column Layout - Contact Form & Map */
+    .contact-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      background: #f7f9f8;
+      border-radius: 20px;
+      padding: 40px 35px;
+    }
+    .contact-form h3 {
+      color: #004225;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .contact-form .form-group {
+      margin-bottom: 20px;
+    }
+    .contact-form label {
+      display: block;
+      font-weight: 500;
+      color: #004225;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 18px;
+      border: 1px solid #dce3e0;
+      border-radius: 12px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      transition: 0.3s;
+      background: #fff;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #006633;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0, 102, 51, 0.1);
+    }
+    .contact-form textarea {
+      resize: vertical;
+    }
+    .contact-form .btn-submit {
+      display: inline-block;
+      background: #006633;
+      color: #fff;
+      padding: 14px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.35s;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+    }
+    .contact-form .btn-submit:hover {
+      background: #FFD54F;
+      color: #004225;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    /* Map */
+    .contact-map {
+      background: #f7f9f8;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 100%;
+      min-height: 450px;
+    }
+    .contact-map iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 450px;
+      border: none;
+    }
+
+    /* Social Links */
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .social-card {
+      background: #f7f9f8;
+      border-radius: 20px;
+      padding: 30px 20px;
+      text-align: center;
+      transition: 0.3s;
+      border: 1px solid #e0e5e2;
+    }
+    .social-card:hover {
+      background: #edf2ef;
+      transform: translateY(-5px);
+    }
+    .social-card i {
+      font-size: 48px;
+      color: #006633;
+      margin-bottom: 12px;
+    }
+    .social-card h4 {
+      color: #004225;
+      font-size: 18px;
+    }
+    .social-card a {
+      color: #006633;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .social-card a:hover {
+      color: #FFD54F;
+    }
+
+    /* ============================================================
+        FOOTER
+       ============================================================ */
+    footer {
+      background: #002b17;
+      color: #ddd;
+      padding: 50px 20px 20px;
+    }
+    .footer-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-logo img {
+      height: 55px;
+      margin-bottom: 12px;
+    }
+    .footer-logo h3 {
+      color: #fff;
+      font-size: 22px;
+      line-height: 1.3;
+    }
+    .footer-logo p {
+      margin-top: 8px;
+      color: #FFD54F;
+    }
+    .footer-links h4, .footer-social h4 {
+      color: #fff;
+      margin-bottom: 18px;
+    }
+    .footer-links a {
+      display: block;
+      margin-bottom: 10px;
+      color: #bbb;
+      transition: 0.2s;
+    }
+    .footer-links a:hover {
+      color: #FFD54F;
+    }
+    .footer-social a {
+      display: inline-block;
+      margin-right: 18px;
+      font-size: 24px;
+      color: #bbb;
+      transition: 0.2s;
+    }
+    .footer-social a:hover {
+      color: #FFD54F;
+    }
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    /* ============================================================
+        RESPONSIVE
+       ============================================================ */
+    @media (max-width: 992px) {
+      nav { padding: 18px 30px; }
+      .nav-links { gap: 16px; flex-wrap: wrap; }
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .contact-two-col {
+        grid-template-columns: 1fr;
+      }
+      .social-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+      .page-hero h1 { font-size: 44px; }
+      .contact-map {
+        min-height: 300px;
+      }
+      .contact-map iframe {
+        min-height: 300px;
+      }
+    }
+    @media (max-width: 768px) {
+      .page-hero { height: 40vh; min-height: 280px; }
+      .page-hero h1 { font-size: 32px; }
+      .page-hero p { font-size: 17px; }
+      .section-title h2 { font-size: 30px; }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .social-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .btn-primary { padding: 12px 28px; }
+      .nav-links { display: none; }
+      .btn-admission { padding: 8px 18px; font-size: 14px; }
+      .contact-form { padding: 25px 20px; }
+      .contact-map {
+        min-height: 250px;
+      }
+      .contact-map iframe {
+        min-height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="logo">
+    <!-- FIXED: SVG replaced with high-quality transparent official DLSJBC logo -->
+    <img src="images/school-logo.jpg" alt="DLSJBC Logo">
+    <div class="logo-text">
+      <h2>De La Salle</h2>
+      <span>John Bosco College</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="academics.html">Academics</a></li>
+    <li><a href="admissions.html">Admissions</a></li>
+    <li><a href="campus-life.html">Campus Life</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a class="active" href="contact.html">Contact</a></li>
+  </ul>
+  <a href="#" class="btn-admission">Apply Now</a>
+</nav>
+
+<!-- ============================================================
+     PAGE HERO
+     ============================================================ -->
+<section class="page-hero">
+  <img 
+    src="images/academics-banner.jpg" 
+    alt="Contact Us" 
+    class="hero-bg"
+  >
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you. Reach out for inquiries about admissions, academics, or campus services.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT CONTENT
+     ============================================================ -->
+<section class="contact-content">
+  <div class="container">
+
+    <!-- Contact Information Cards -->
+    <div class="section-title">
+      <span>GET IN TOUCH</span>
+      <h2>Contact Information</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fa-solid fa-location-dot"></i>
+        <h3>Address</h3>
+        <p>De La Salle John Bosco College, Bislig City, Surigao del Sur, Philippines</p>
+      </div>
+      <div class="contact-card">
+        <i class="fa-solid fa-phone"></i>
+        <h3>Phone</h3>
+        <p>+63 086 853 3415</p>
+      </div>
+      <div class="contact-card">
+        <i class="fa-solid fa-envelope"></i>
+        <h3>Email</h3>
+        <p><a href="mailto:info@dlsjbc.edu.ph">info@dlsjbc.edu.ph</a></p>
+      </div>
+      <div class="contact-card">
+        <i class="fa-solid fa-clock"></i>
+        <h3>Office Hours</h3>
+        <p>Monday - Friday<br>8:00 AM - 5:00 PM</p>
+      </div>
+    </div>
+
+    <!-- Contact Form & Map -->
+    <div class="section-title">
+      <span>SEND US A MESSAGE</span>
+      <h2>We'd Love to Hear From You</h2>
+    </div>
+    <div class="contact-two-col">
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <form action="#" method="post">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+      </div>
+      <div class="contact-map">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.724941704483!2d126.32591597533942!3d8.230511091169361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3303b8b5a6c5a3d9%3A0x8a9a7b0e1c4e3f2b!2sBislig%20City%2C%20Surigao%20del%20Sur%2C%20Philippines!5e0!3m2!1sen!2sph!4v1700000000000" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Follow Us / Social Media -->
+    <div class="section-title">
+      <span>FOLLOW US</span>
+      <h2>Stay Connected</h2>
+    </div>
+    <div class="social-grid">
+      <div class="social-card">
+        <i class="fab fa-facebook"></i>
+        <h4>Facebook</h4>
+        <a href="https://www.facebook.com/dlsjbc" target="_blank">@DLSJBC.Official</a>
+      </div>
+      <div class="social-card">
+        <i class="fab fa-instagram"></i>
+        <h4>Instagram</h4>
+        <a href="https://www.instagram.com/dlsjbc_official" target="_blank">@DLSJBC</a>
+      </div>
+      <div class="social-card">
+        <i class="fab fa-youtube"></i>
+        <h4>YouTube</h4>
+        <a href="https://www.youtube.com/@dlsjbc" target="_blank">DLSJBC Channel</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="container footer-container">
+    <div class="footer-logo">
+      <img src="images/school-logo.jpg">
+      <h3>De La Salle<br>John Bosco College</h3>
+      <p>Faith • Service • Communion</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="campus-life.html">Campus Life</a>
+      <a href="news.html">News</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <a href="https://www.facebook.com/dlsjbc" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/dlsjbc_scb?igsh=MzEyN3FwbjBzcXNs" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@dlsjbc" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="copyright">
+    © 2026 De La Salle John Bosco College. All Rights Reserved.
+  </div>
+</footer>
+
+</body>
+</html>
