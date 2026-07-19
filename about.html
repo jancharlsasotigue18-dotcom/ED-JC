@@ -747,6 +747,139 @@
         width: 150px;
       }
     }
+    /* ==========================
+   LOADING SCREEN
+========================== */
+
+#loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#004225;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:99999;
+    transition:opacity .7s ease, visibility .7s;
+}
+
+#loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-logo{
+    width:100px;
+    animation:spin 2s linear infinite;
+}
+
+.loader-text{
+    color:#fff;
+    margin-top:20px;
+    font-size:20px;
+    font-weight:600;
+    letter-spacing:2px;
+}
+
+.loader{
+    width:60px;
+    height:60px;
+    border:6px solid rgba(255,255,255,.3);
+    border-top:6px solid #FFD54F;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+    margin-top:20px;
+}
+
+@keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+    /* ==========================
+   DARK MODE
+========================== */
+
+.dark-toggle{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:#FFD54F;
+
+    color:#004225;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+    z-index:999;
+
+    transition:.3s;
+
+}
+
+.dark-toggle:hover{
+
+    transform:scale(1.1);
+
+}
+
+body.dark{
+
+    background:#121212;
+
+    color:#ffffff;
+
+}
+
+body.dark nav{
+
+    background:#1d1d1d;
+
+}
+
+body.dark .feature-card,
+body.dark .card,
+body.dark .news-card,
+body.dark .program-card,
+body.dark .department-card,
+body.dark .track-card,
+body.dark .contact-card,
+body.dark .vmv-card,
+body.dark .value-card,
+body.dark .choose-card{
+
+    background:#1f1f1f;
+
+    color:white;
+
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark p,
+body.dark a{
+
+    color:white;
+
+}
   </style>
 </head>
 <body>
@@ -1097,6 +1230,61 @@
     }
   });
 </script>
+<button class="dark-toggle" id="darkBtn">
 
+<i class="fa-solid fa-moon"></i>
+
+</button>
+<script>
+
+const btn=document.getElementById("darkBtn");
+
+if(localStorage.getItem("theme")=="dark"){
+
+document.body.classList.add("dark");
+
+btn.innerHTML='<i class="fa-solid fa-sun"></i>';
+
+}
+
+btn.onclick=function(){
+
+document.body.classList.toggle("dark");
+
+if(document.body.classList.contains("dark")){
+
+localStorage.setItem("theme","dark");
+
+btn.innerHTML='<i class="fa-solid fa-sun"></i>';
+
+}else{
+
+localStorage.setItem("theme","light");
+
+btn.innerHTML='<i class="fa-solid fa-moon"></i>';
+
+}
+
+}
+
+</script>
 </body>
+<script>
+
+window.addEventListener("load",()=>{
+
+    document.getElementById("loader").classList.add("hide");
+
+});
+
+</script>
+<div id="loader">
+
+    <img src="images/school-logo.jpg" class="loader-logo">
+
+    <div class="loader-text">
+        De La Salle John Bosco College
+    </div>
+    <div class="loader"></div>
+</div>
 </html>
